@@ -1,8 +1,8 @@
 {
-    "title": "Как я вижу историю",
+    "title": "И-я: гуманитарный блог",
     "author": "Михаил Беляков",
 
-    "brand": "Как я вижу историю",
+    "brand": "И-я: гуманитарный блог",
     "githubLink": "https://github.com/yababay/svelte-meets-yababay",
     "navbarIcons": [
         {"icon": "initialize"},

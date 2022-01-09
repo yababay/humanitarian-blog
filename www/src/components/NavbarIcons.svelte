@@ -3,10 +3,12 @@
     import Github from './iconified-links/Github.svelte'
     import Initialize from './iconified-links/Initialize.svelte'
     import Community from './iconified-links/Community.svelte'
+
+    let isLocalhost = new URL(document.URL).host.includes('localhost')
 </script>
 
 {#each settings.navbarIcons as link}
-    {#if link.icon == 'initialize'}
+    {#if link.icon == 'initialize' && isLocalhost}
         <Initialize />
     {/if}
     {#if link.icon == 'github'}

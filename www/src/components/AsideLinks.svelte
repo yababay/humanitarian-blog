@@ -1,13 +1,13 @@
 <script>
-    import BookIcon from '@yababay67/svelte-meets-bootstrap-icons/book.svelte'
-    import SignpostIcon from '@yababay67/svelte-meets-bootstrap-icons/signpost.svelte'
+    import Icon from '@yababay67/svelte-meets-bootstrap-icons/blockquote-left.svelte'
+    let isLocalhost = new URL(document.URL).host.includes('localhost')
 </script>
 
-{#await fetch('toc.json').then(res => res.json()) then posts}
+{#await fetch(isLocalhost ? '/api/toc' : 'toc.json').then(res => res.json()) then posts}
     {#each posts as post}
         <li>
             <a href={post[0]} class="nav-link link-secondary">
-                <SignpostIcon size="24" />
+                <Icon size="24" />
                 {`${post[1]} (${post[2]})`}
             </a>
         </li>

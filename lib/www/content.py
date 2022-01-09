@@ -27,7 +27,9 @@ def write_toc():
                     blog_posts.append(blog_post)
                     break
     with open('./www/docs/toc.json', 'w') as f:
-        f.write(json.dumps(blog_posts, ensure_ascii=False))
+        output = json.dumps(blog_posts, ensure_ascii=False)
+        f.write(output)
+        return output
 
 
 def initialize(title, date):
@@ -56,4 +58,5 @@ def distill(value):
             .replace("«", '')  \
             .replace("»", '')  \
             .replace('.', '-')
+
 

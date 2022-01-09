@@ -1,4 +1,4 @@
-# svelte-meets-yababay
+# svelte-meets-blog
 
-Yababay's template for web-frontend.
+Simple humanitarian blog.
 
