@@ -1,0 +1,40 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width,initial-scale=1')
+
+        if withBootstrap
+            link(rel='stylesheet' href='vendors/css/bootstrap.min.css')
+            script(defer src='vendors/js/bootstrap.bundle.min.js')
+
+        if withHeaderMainFooter
+            link(rel='stylesheet' href='css/header-main-footer.css')
+
+        if withAsideAndArticleMain
+            link(rel='stylesheet' href='css/aside-and-article.css')
+
+        if withSvelte
+            link(rel='stylesheet' href='build/bundle.css')
+            script(defer src='build/bundle.js')
+
+        if logoFormat == "svg"
+            link(rel='icon' type='image/svg+xml' href='img/index.svg')
+        else
+            link(rel='icon' type='image/png' href='favicon.png')
+
+        link(rel='stylesheet' href='css/index.css')
+
+        title= title
+
+    body
+        header
+            if withBrandAndEndIconsHeader
+                include headers/brand-and-end-icons
+        main
+            if withAsideAndArticleMain
+                include asides/aside-and-article
+        footer
+            if withSimpleCopyrightFooter
+                include footers/simple-copyright
+

@@ -1,0 +1,32 @@
+{
+    "title": "Как я вижу историю",
+    "author": "Михаил Беляков",
+
+    "brand": "Как я вижу историю",
+    "githubLink": "https://github.com/yababay/svelte-meets-yababay",
+    "navbarIcons": [
+        {"icon": "initialize"},
+        {"icon": "community"},
+        {"icon": "github"}
+    ],
+
+    "asideLinks": [
+        {
+            "title": "Материалы блога:", 
+            "link": "#blog"
+        }
+    ],
+
+    "logoFormat": "svg",
+
+    "withBootstrap":              true,
+    "withHeaderMainFooter":       true,
+    "withAsideAndArticleMain":    true,
+    "withSvelte":                 true,
+    "withBrandAndEndIconsHeader": true,
+    "withAsideAndArticleMain":    true,
+    "withSimpleCopyrightFooter":  true,
+    "withHashRouting":            true,
+
+    "copyright": "Михаил Беляков"
+}
