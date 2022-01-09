@@ -12,7 +12,7 @@ time_string = "DAY_OF_MONTH MONTH_LONG YEAR_LONG г., HOUR_24:MINUTE"
 
 
 def write_toc():
-    text_files = glob.glob('./www/docs/content/*.md')
+    text_files = glob.glob('./docs/content/*.md')
     blog_posts = []
     for text_file in sorted(text_files, reverse=True):
         m = re.match(re_date, text_file)
@@ -26,7 +26,7 @@ def write_toc():
                     blog_post.append(line.replace('<time>', '').replace('</time>', '').strip())
                     blog_posts.append(blog_post)
                     break
-    with open('./www/docs/toc.json', 'w') as f:
+    with open('./docs/toc.json', 'w') as f:
         output = json.dumps(blog_posts, ensure_ascii=False)
         f.write(output)
         return output
@@ -38,7 +38,7 @@ def initialize(title, date):
         date = dateutil.parser.isoparse(date)
     else:
         date = datetime.now(pytz.timezone('Europe/Moscow'))
-    fn = f'./www/docs/content/{date.isoformat()[:16]}-{distill(title)}.md'
+    fn = f'./docs/content/{date.isoformat()[:16]}-{distill(title)}.md'
     with open(fn, 'w') as file:
         file.write(f'# {title}\n\n<time>{human_format(time_string, date)}</time>\n\n')
     write_toc()
