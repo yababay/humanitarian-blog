@@ -38,7 +38,7 @@ def initialize(title, date):
         date = dateutil.parser.isoparse(date)
     else:
         date = datetime.now(pytz.timezone('Europe/Moscow'))
-    fn = f'./docs/content/{date.isoformat()[:16]}-{distill(title)}.md'
+    fn = f'./docs/content/{date.isoformat().replace(":", "-").replace("T", "-")[:16]}-{distill(title)}.md'
     with open(fn, 'w') as file:
         file.write(f'# {title}\n\n<time>{human_format(time_string, date)}</time>\n\n')
     write_toc()
