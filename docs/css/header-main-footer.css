@@ -31,6 +31,11 @@ main {
     min-height: var(--main-min-height);
 }
 
+aside {
+    max-height: calc(var(--main-min-height) * .99);
+    overflow-y: auto;
+}
+
 hr {
     margin: .3rem 0;
 }

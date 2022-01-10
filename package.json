@@ -16,6 +16,8 @@
     "git": "git init && git add .gitignore docs/content docs/img src/settings.json README.md && git commit -am content-only && git checkout -b content && git checkout main && git add . && git commit -am first",
     "dev": "rollup -c -w",
     "clean": "rm -rf docs/index.html docs/vendors src/pug_modules",
+    "from-dropbox": "rclone sync \"dropbox:/Тексты/История (блог)\" docs/content/",
+    "to-dropbox": "rclone sync docs/content/ \"dropbox:/Тексты/История (блог)\"",
     "reset": "npm run clean && npm run postinstall",
     "start": "sirv docs --no-clear"
   },

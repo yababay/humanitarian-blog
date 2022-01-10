@@ -1,5 +1,6 @@
 <script>
     import Icon from '@yababay67/svelte-meets-bootstrap-icons/blockquote-left.svelte'
+    import { onMount } from 'svelte'
     let isLocalhost = new URL(document.URL).host.includes('localhost')
 </script>
 
