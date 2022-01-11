@@ -14,7 +14,9 @@ window.addEventListener("hashchange", function(event){
 });
 
 function switchHash(){
-    let link = /.*#([a-zA-Z0-9\-\/\._\:]+)$/.exec(document.URL)
+    const url = document.URL
+    if(!url.includes('#')) return
+    let link = /.*#([a-zA-Z0-9\-\/\._\:]+)$/.exec(url)
     if(!(link && link[1])) link = home
     else {
         link = link[1] 	

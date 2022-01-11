@@ -11,6 +11,7 @@
         if(res.status != 200) throw "Не удалось загрузить запрашиваемый ресурс."
         const txt = await res.text()
         return converter.makeHtml(txt)
+                .replace(/\<blockquote\>/g, '<blockquote class="blockquote">')
     }
 
 </script>

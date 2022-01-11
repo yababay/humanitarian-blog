@@ -1,3 +1,14 @@
 article p {
     text-align: justify;
 }
+
+article blockquote {
+    font-size: 1.1rem !important;
+    font-style: italic;
+    padding: 0.5rem 0 0.5rem 1rem !important;
+    border-left: 5px solid #ddd;
+}
+
+article p img{
+    width: 100%;
+}

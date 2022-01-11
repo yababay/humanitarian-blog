@@ -1,9 +1,10 @@
 {
-    "title": "И-я: гуманитарный блог",
+    "title": "Блог Михаила Белякова на темы альтернативной истории",
     "author": "Михаил Беляков",
+    "description": "Заметки по альтернативной истории, анализ исторических источников Античности и Средневековья, гипотезы, обнаружение исторических фальсификаций.",
 
-    "brand": "И-я: гуманитарный блог",
-    "githubLink": "https://github.com/yababay/svelte-meets-yababay",
+    "brand": "Критический взгляд на прошлое",
+    "githubLink": "https://github.com/yababay/humanitarian-blog",
     "navbarIcons": [
         {"icon": "initialize"},
         {"icon": "community"},
@@ -12,7 +13,7 @@
 
     "asideLinks": [
         {
-            "title": "Материалы блога:", 
+            "title": "Список постов блога:", 
             "link": "#blog"
         }
     ],
