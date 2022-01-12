@@ -13,7 +13,11 @@
 
     "asideLinks": [
         {
-            "title": "Тексты 2021 г.:", 
+            "title": "2022 год:", 
+            "link": "#blog"
+        },
+        {
+            "title": "2021 год:", 
             "link": "#blog"
         }
     ],

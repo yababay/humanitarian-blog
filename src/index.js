@@ -11,10 +11,16 @@ if(settings.navbarIcons && navUl){
     })
 }
 
-const asideUl = document.querySelector('aside ul')
+const asideUls = document.querySelectorAll('aside ul')
 
 new AsideLinks({
-    target: asideUl
+    target: asideUls[0],
+    props: {year: '2022'}
+})
+
+new AsideLinks({
+    target: asideUls[1],
+    props: {year: '2021'}
 })
 
 if(settings.withHashRouting){

@@ -1,10 +1,18 @@
 <script>
     import Icon from '@yababay67/svelte-meets-bootstrap-icons/blockquote-left.svelte'
     import { onMount } from 'svelte'
-    //let isLocalhost = new URL(document.URL).host.includes('localhost')
+    export let year
+
+    async function getTocByYear(){
+        const res = await fetch('toc.json')
+        let posts = await res.json()
+        posts = posts.filter(el => el[0].includes('#' + year))
+        return posts
+    }
+
 </script>
 
-{#await fetch('toc.json').then(res => res.json()) then posts}
+{#await getTocByYear() then posts}
     {#each posts as post}
         <li>
             <a href={post[0]} class="nav-link link-secondary">
