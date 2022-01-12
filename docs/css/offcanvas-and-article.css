@@ -2,5 +2,5 @@
     position: fixed;
     left: 0;
     top: var(--header-height);
-    margin: 1rem 0 0 1rem;
+    margin: 0.5rem 0 0 1rem;
 }

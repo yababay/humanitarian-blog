@@ -12,7 +12,7 @@
         <Initialize />
     {/if}
     {#if link.icon == 'github'}
-        <Github />
+        <Github link={link.link}/>
     {/if}
     {#if link.icon == 'community'}
         <Community />

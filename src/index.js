@@ -21,3 +21,17 @@ if(settings.withHashRouting){
     useHashRouting()
 }
 
+const header = document.querySelector('header')
+const tocShowButton = document.querySelector('#toc-show')
+
+const tocShowCallback = (entries) => {
+    entries.forEach(entry => {
+        if(entry.target !== header) return
+        tocShowButton.style.top = entry.isIntersecting ? "var(--header-height)" : "0"
+    })
+}
+
+const tocShowObserver = new IntersectionObserver(tocShowCallback, {threshold: .25});
+
+
+tocShowObserver.observe(header)
