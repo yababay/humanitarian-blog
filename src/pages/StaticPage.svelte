@@ -2,6 +2,7 @@
     import Showdown from 'showdown'
 
     const converter = new Showdown.Converter()
+    const tocClose = document.querySelector('#toc-offcanvas .btn-close')
 
     export let link
     export let prefix = 'content'
@@ -10,6 +11,7 @@
         const res = await fetch(`${prefix}/${link}${link.endsWith(".md") ? "" : ".md"}`)
         if(res.status != 200) throw "Не удалось загрузить запрашиваемый ресурс."
         const txt = await res.text()
+        tocClose.click()
         return converter.makeHtml(txt)
                 .replace(/\<blockquote\>/g, '<blockquote class="blockquote">')
     }
