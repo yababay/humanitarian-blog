@@ -16,6 +16,9 @@ html(lang="ru")
         if withAsideAndArticleMain
             link(rel='stylesheet' href='css/aside-and-article.css')
 
+        if withOffcanvasAndArticleMain
+            link(rel='stylesheet' href='css/offcanvas-and-article.css')
+
         if withSvelte
             link(rel='stylesheet' href='svelte/bundle.css')
             script(defer src='svelte/bundle.js')
@@ -36,6 +39,8 @@ html(lang="ru")
         main
             if withAsideAndArticleMain
                 include asides/aside-and-article
+            if withOffcanvasAndArticleMain
+                include asides/offcanvas-and-article
         footer
             if withSimpleCopyrightFooter
                 include footers/simple-copyright

@@ -35,13 +35,13 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-terser": "^7.0.0",
+    "jstransformer-markdown-it": "^2.1.0",
+    "sirv-cli": "^1.0.0",
     "svelte": "^3.0.0"
   },
   "dependencies": {
     "@yababay67/svelte-meets-bootstrap-icons": "^0.0.7",
     "@yababay67/svelte-meets-pug": "^0.2.3",
-    "jstransformer-markdown-it": "^2.1.0",
-    "showdown": "^1.9.1",
-    "sirv-cli": "^1.0.0"
+    "showdown": "^1.9.1"
   }
 }

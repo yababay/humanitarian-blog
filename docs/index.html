@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta name="description" content="Заметки по альтернативной истории, анализ исторических источников Античности и Средневековья, гипотезы, обнаружение исторических фальсификаций, происхождение славян.">
+    <meta name="description" content="Анализ исторических источников, Античность и Средневековье, обнаружение исторических фальсификаций, происхождение славян.">
     <meta name="author" content="Михаил Беляков">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
     <script defer src="vendors/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/header-main-footer.css">
-    <link rel="stylesheet" href="css/aside-and-article.css">
+    <link rel="stylesheet" href="css/offcanvas-and-article.css">
     <link rel="stylesheet" href="svelte/bundle.css">
     <script defer src="svelte/bundle.js"></script>
     <link rel="icon" type="image/svg+xml" href="img/index.svg">
     <link rel="stylesheet" href="css/index.css">
-    <title>Блог на гуманитарные темы</title>
+    <title>Материалы по альтернативной истории</title>
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-dark bg-dark shadow"><a class="navbar-brand ms-3" href="/"><img class="me-2" src="img/index.svg" alt="logo" width="32" height="32"><span>Критический взгляд на прошлое</span></a>
+      <nav class="navbar navbar-dark bg-dark shadow"><a class="navbar-brand ms-3" href="/"><img class="me-2" src="img/index.svg" alt="logo" width="32" height="32"><span>Материалы по альтернативной истории</span></a>
         <ul class="nav navbar-nav me-3 flex-row"></ul>
       </nav>
     </header>
-    <main>
-      <aside class="p-3 bg-light"><a class="d-flex align-items-center mb-3 mt-3 mb-md-0 me-md-auto text-decoration-none link-dark" href="#blog"><span class="fs-5">Список постов блога:</span></a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto"></ul>
+    <main><a class="link-secondary" id="toc-show" type="button" data-bs-toggle="offcanvas" data-bs-target="#toc-offcanvas" aria-controls="toc-offcanvas">Показать список материалов</a>
+      <aside class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="toc-offcanvas" aria-labelledby="toc-offcanvas-label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="toc-offcanvas-label">Список материалов:</h5><button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body"><a class="d-flex align-items-center mb-3 mt-3 mb-md-0 me-md-auto text-decoration-none link-dark" href="#blog"><span class="fs-5">Тексты 2021 г.:</span></a>
+          <ul class="nav nav-pills flex-column mb-auto"></ul>
+        </div>
       </aside>
       <article>
-        <div class="container"><h1>Творческий отчет альтернативного историка</h1>
-<p><strong>Здравствуйте, на связи Михаил aka Yababay.</strong></p>
-<p>Решил собрать на этом сайте все свои материалы на историческую тематику, за
-исключением цикла &quot;Домен Агенобарбов&quot;. Их можно также посмотреть
-на моем сайте в пространстве <a href="https://yababay.medium.com">Medium</a> и на <a href="https://t.me/barn_yababay_ru">Telegram-канале</a>.</p>
+        <section class="container"><h1>Альтернатива без покрышки и дна</h1>
+<pre><code>В моей альтернативе ни покрышки, ни дна;
+Я правда стою, но непонятно на чем.
+Все уже забыли, в чем наша вина,
+А я до сих пор уверен, что мы ни при чем.
+И нелепо делать вид, что я стою у руля,
+Когда вокруг столько кармы, инь и янь;
+И в самом деле, пусть все течет, как течет;
+Ну а я слегка пьян. 
+
+                                  БГ
+</code></pre>
+<p><strong>Здравствуйте, на связи Михаил Беляков aka Yababay.</strong></p>
+<p>Решил собрать здесь всё написанное мной на историческую тематику, за
+исключением цикла &quot;Домен Агенобарбов&quot; (он пока предствляет собой лишь этюды).
+Эти материалы можно также посмотреть
+на <a href="https://yababay.medium.com">Medium</a> и <a href="https://t.me/barn_yababay_ru">Telegram-канале</a>.</p>
+<p>Для более удобной навигации по материалам истользуйте, пожалуйста,
+ссылку «Показать список материалов» слева вверху. Там более актуальный перечень.
+Ссылки, размещенные ниже - скорее для поисковых систем, чем для людей, но тоже работают.</p>
+<iframe width="790" height="444" src="https://www.youtube.com/embed/raoyqp0Z1MM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <ul>
 <li><a href="#2021-10-16_-------------------------------------------------------------a1492ef2064c.md">Россия — родина слонов (3 ноября 2021 г.)</a></li>
 <li><a href="#2021-09-18_What-the------a6098afd435c.md">Александр Македонский, Робинзон Крузо и “неправильные пчелы” (16 октября 2021 г.)</a></li>
@@ -93,11 +113,10 @@
 <li><a href="#2021-04-09_----------------------------------------20269fa30b95.md">Зачем он вообще нужен, этот Новгород? (15 апреля 2021 г.)</a></li>
 </ul>
 
-        </div>
+        </section>
       </article>
     </main>
     <footer>
-      <hr>
       <div class="bg-light text-center w-100">
         &copy;
         &nbsp;<span>Михаил Беляков</span>,&nbsp;<span>2022</span>

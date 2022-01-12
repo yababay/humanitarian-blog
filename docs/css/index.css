@@ -1,3 +1,12 @@
+pre {
+    margin-top: 3rem;
+    margin-left: 50%;
+}
+
+article section {
+    max-width: 80ch !important;
+}
+
 article p {
     text-align: justify;
 }
@@ -11,4 +20,20 @@ article blockquote {
 
 article p img{
     width: 100%;
+}
+
+.welcome {
+    margin-top: 3rem;
+    max-width: 50rem;
+}
+
+hr {
+    margin: .3rem 0;
+}
+
+footer {
+    border-top: 1px solid silver;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

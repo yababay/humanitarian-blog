@@ -4,9 +4,9 @@ from .content import initialize as init_article, write_toc
 routes = RouteTableDef()
 
 
-@routes.get('/api/toc')
+@routes.get('/toc.json')
 async def toc(_):
-    return Response(text=write_toc(), content_type='text/plain')
+    return Response(text=write_toc(), content_type='application/json')
 
 
 @routes.get('/api/initialize')

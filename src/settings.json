@@ -1,33 +1,32 @@
 {
-    "title": "Блог на гуманитарные темы",
     "author": "Михаил Беляков",
-    "description": "Заметки по альтернативной истории, анализ исторических источников Античности и Средневековья, гипотезы, обнаружение исторических фальсификаций, происхождение славян.",
+    "title" : "Материалы по альтернативной истории",
+    "brand" : "Материалы по альтернативной истории",
+    "description": "Анализ исторических источников, Античность и Средневековье, обнаружение исторических фальсификаций, происхождение славян.",
 
-    "brand": "Критический взгляд на прошлое",
-    "githubLink": "https://github.com/yababay/humanitarian-blog",
     "navbarIcons": [
         {"icon": "initialize"},
         {"icon": "community"},
-        {"icon": "github"}
+        {"icon": "github", "link": "https://github.com/yababay/humanitarian-blog"}
     ],
 
     "asideLinks": [
         {
-            "title": "Список постов блога:", 
+            "title": "Тексты 2021 г.:", 
             "link": "#blog"
         }
     ],
 
     "logoFormat": "svg",
 
-    "withBootstrap":              true,
-    "withHeaderMainFooter":       true,
-    "withAsideAndArticleMain":    true,
-    "withSvelte":                 true,
-    "withBrandAndEndIconsHeader": true,
-    "withAsideAndArticleMain":    true,
-    "withSimpleCopyrightFooter":  true,
-    "withHashRouting":            true,
+    "withBootstrap":               true,
+    "withSvelte":                  true,
+    "withHashRouting":             true,
 
-    "copyright": "Михаил Беляков"
+    "withHeaderMainFooter":        true,
+    "withBrandAndEndIconsHeader":  true,
+    "withOffcanvasAndArticleMain": true,
+    "withSimpleCopyrightFooter":   true,
+    
+    "copyright": true
 }
