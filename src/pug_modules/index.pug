@@ -1,47 +1,69 @@
 doctype html
 html(lang="ru")
     head
+        meta(charset='utf-8')
         meta(name="description" content=description)
         meta(name="author" content=author)
-        meta(charset='utf-8')
         meta(name='viewport' content='width=device-width,initial-scale=1')
 
         if withBootstrap
             link(rel='stylesheet' href='vendors/css/bootstrap.min.css')
             script(defer src='vendors/js/bootstrap.bundle.min.js')
+            //script(defer src='vendors/js/popper.min.js')
 
-        if withHeaderMainFooter
-            link(rel='stylesheet' href='css/header-main-footer.css')
+        if withCoderdocs
+            link(rel="stylesheet" href="vendors/css/monokai.css")
+            link(rel='stylesheet' href='pug-modules/coderdocs.css')
+            script(defer src='vendors/js/bootstrap.bundle.min.js')
+            script(defer src='vendors/js/popper.min.js')
+            script(defer src="vendors/js/coderdocs.js")
+        if withSmoothscroll
+            script(defer src="vendors/js/smoothscroll.min.js")
+        if withLightbox
+            script(defer src="vendors/js/simple-lightbox.min.js")
+        if withGumshoe
+            script(defer src="vendors/js/gumshoe.polyfills.min.js")
 
-        if withAsideAndArticleMain
-            link(rel='stylesheet' href='css/aside-and-article.css')
+        if withHMFLayout
+            link(rel='stylesheet' href='pug-modules/header-main-footer.css')
 
-        if withOffcanvasAndArticleMain
-            link(rel='stylesheet' href='css/offcanvas-and-article.css')
+        if mainLayout
+            link(rel='stylesheet' href='pug-modules/' + mainLayout + '.css')
 
         if withSvelte
-            link(rel='stylesheet' href='svelte/bundle.css')
-            script(defer src='svelte/bundle.js')
+            link(rel='stylesheet' href='build/bundle.css')
+            script(defer src='build/bundle.js')
 
-        if logoFormat == "svg"
-            link(rel='icon' type='image/svg+xml' href='img/index.svg')
+        if !logo 
+            link(rel='icon' type='image/svg+xml' href='media/logo.svg')
         else
-            link(rel='icon' type='image/png' href='favicon.png')
+            link(rel='icon' type='image/png' href=logo)
 
-        link(rel='stylesheet' href='css/index.css')
+        if withIndexCss
+            link(rel='stylesheet' href='css/index.css')
 
         title= title
 
     body
-        header
-            if withBrandAndEndIconsHeader
+        include sprites/svg
+        header(class=(headerIsFixed && "fixed-top" || ""))
+            if headerLayout == 'brand-and-end-icons'
                 include headers/brand-and-end-icons
+
+            if headerLayout == 'coderdocs'
+                include headers/coderdocs
         main
-            if withAsideAndArticleMain
-                include asides/aside-and-article
-            if withOffcanvasAndArticleMain
-                include asides/offcanvas-and-article
-        footer
-            if withSimpleCopyrightFooter
-                include footers/simple-copyright
+            if mainLayout == 'aside-and-article'
+                include main/aside-and-article
+
+            if mainLayout == 'offcanvas-and-article'
+                include main/offcanvas-and-article
+
+            if mainLayout == 'coderdocs'
+                include main/coderdocs
+
+        if withHMFLayout || withFooter
+            footer
+                if footerLayout == 'simple-copyright'
+                    include footers/simple-copyright
 

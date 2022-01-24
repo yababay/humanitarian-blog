@@ -1,3 +1,31 @@
+.char-80{
+    max-width: 80ch;
+    margin: 3rem auto;
+}
+
+.nav-link span {
+    font-size: initial;
+}
+.nav-link time {
+    font-size: small;
+}
+
+ul.welcome, li.welcome {
+    margin-top: .5rem
+}
+
+article ul li {
+    font-size: 1rem;
+}
+
+.aside-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: .3rem;
+    margin-top: -3px;
+}
+
 pre {
     margin-top: 3rem;
     margin-left: 50%;
@@ -22,11 +50,6 @@ article p img{
     width: 100%;
 }
 
-.welcome {
-    margin-top: 3rem;
-    max-width: 50rem;
-}
-
 hr {
     margin: .3rem 0;
 }
@@ -37,3 +60,4 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 }
+

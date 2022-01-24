@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <meta charset="utf-8">
     <meta name="description" content="Анализ исторических источников, Античность и Средневековье, обнаружение исторических фальсификаций, происхождение славян.">
     <meta name="author" content="Михаил Беляков">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
     <script defer src="vendors/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/header-main-footer.css">
-    <link rel="stylesheet" href="css/offcanvas-and-article.css">
-    <link rel="stylesheet" href="svelte/bundle.css">
-    <script defer src="svelte/bundle.js"></script>
-    <link rel="icon" type="image/svg+xml" href="img/index.svg">
+    <!--script(defer src='vendors/js/popper.min.js')-->
+    <link rel="stylesheet" href="pug-modules/header-main-footer.css">
+    <link rel="stylesheet" href="pug-modules/offcanvas-and-article.css">
+    <link rel="stylesheet" href="build/bundle.css">
+    <script defer src="build/bundle.js"></script>
+    <link rel="icon" type="image/svg+xml" href="media/logo.svg">
     <link rel="stylesheet" href="css/index.css">
     <title>Материалы по альтернативной истории</title>
   </head>
-  <body>
+  <body><svg style="display: none">
+<symbol id="github" viewBox="0 0 16 16" fill="currentColor">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+</symbol>
+<symbol id="person-plus" viewBox="0 0 16 16" fill="currentColor">
+<path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+<path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+</symbol>
+<symbol id="blockquote-left" viewBox="0 0 16 16" fill="currentColor">
+<path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11zm.79-5.373c.112-.078.26-.17.444-.275L3.524 6c-.122.074-.272.17-.452.287-.18.117-.35.26-.51.428a2.425 2.425 0 0 0-.398.562c-.11.207-.164.438-.164.692 0 .36.072.65.217.873.144.219.385.328.72.328.215 0 .383-.07.504-.211a.697.697 0 0 0 .188-.463c0-.23-.07-.404-.211-.521-.137-.121-.326-.182-.568-.182h-.282c.024-.203.065-.37.123-.498a1.38 1.38 0 0 1 .252-.37 1.94 1.94 0 0 1 .346-.298zm2.167 0c.113-.078.262-.17.445-.275L5.692 6c-.122.074-.272.17-.452.287-.18.117-.35.26-.51.428a2.425 2.425 0 0 0-.398.562c-.11.207-.164.438-.164.692 0 .36.072.65.217.873.144.219.385.328.72.328.215 0 .383-.07.504-.211a.697.697 0 0 0 .188-.463c0-.23-.07-.404-.211-.521-.137-.121-.326-.182-.568-.182h-.282a1.75 1.75 0 0 1 .118-.492c.058-.13.144-.254.257-.375a1.94 1.94 0 0 1 .346-.3z"/>
+</symbol>
+</svg>
     <header>
-      <nav class="navbar navbar-dark bg-dark shadow"><a class="navbar-brand ms-3" href="https://yababay.github.io/humanitarian-blog"><img class="me-2" src="img/index.svg" alt="logo" width="32" height="32"><span>Моя альтернатива</span></a>
+      <nav class="navbar navbar-dark bg-dark shadow">
+        <button class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" id="docs-sidebar-toggler" type="button"><span></span>
+<span></span>
+<span></span>
+        </button><a class="navbar-brand ms-3" href="#/"><img class="me-2" src="media/logo.svg" alt="logo" width="32" height="32"><span>Моя альтернатива</span></a>
         <ul class="nav navbar-nav me-3 flex-row"></ul>
       </nav>
     </header>
@@ -26,13 +42,348 @@
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="toc-offcanvas-label">Список материалов:</h5><button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body"><a class="d-flex align-items-center mb-3 mt-3 mb-md-0 me-md-auto text-decoration-none link-dark" href="#blog"><span class="fs-5">2022 год:</span></a>
-          <ul class="nav nav-pills flex-column mb-auto"></ul><a class="d-flex align-items-center mb-3 mt-3 mb-md-0 me-md-auto text-decoration-none link-dark" href="#blog"><span class="fs-5">2021 год:</span></a>
-          <ul class="nav nav-pills flex-column mb-auto"></ul>
+        <div class="offcanvas-body">
+          <h5 class="offcanvas-title">Материалы за 2022 г:
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li><a class="nav-link link-secondary" href="#2022-01-22-zhili-v-lesu-molilis-kolesu.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Жили в лесу, молились колесу.</span><br>
+                  <time>22 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2022-01-15-nemtsy-i-nemezida.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Немцы и Немезида.</span><br>
+                  <time>15 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2022-01-14-ser-dik-uittington-sergej-esenin-vikingi-i-kotiki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Сэр Дик Уиттингтон, Сергей Есенин, викинги и котики.</span><br>
+                  <time>14 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2022-01-13-lukan-i-lukavstvo.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Лукан и лукавство.</span><br>
+                  <time>13 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-12-otyskalsja-sled-kopetrjasov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Отыскался след копьетрясов!.</span><br>
+                  <time>12 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-11-abyrvalg-noverlendskij.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Абырвалг Новерлендский.</span><br>
+                  <time>11 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-08-zhelezobetonnaja-korona-langobardov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Железобетонная корона лангобардов.</span><br>
+                  <time>08 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-06-slavjane-svoi-i-chuzhie.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Славяне “свои” и “чужие”.</span><br>
+                  <time>06 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-05-izjasnenie-nazvanij-nemetskih-gorodov-kotorye-prezhde-byli-slavjanskimi.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Изяснение названий немецких городов, которые прежде были славянскими.</span><br>
+                  <time>05 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-25-mezhdu-pervoj-i-vtoroj-pereryvchik-nebolshoj.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Между первой и второй перерывчик небольшой.</span><br>
+                  <time>25 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-22-italija-ne-rezinovaja.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Италия не резиновая.</span><br>
+                  <time>22 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-12-gotskij-dvor-na-ostrove-bujane.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Готский двор на острове Буяне.</span><br>
+                  <time>12 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-03-rossija-rodina-slonov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Россия — родина слонов.</span><br>
+                  <time>03 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-10-16-aleksandr-makedonskij-robinzon-kruzo-i-nepravilnye-pchely.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Александр Македонский, Робинзон Крузо и “неправильные пчелы”.</span><br>
+                  <time>16 октября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-18-what-the-schit.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>What the щит?.</span><br>
+                  <time>18 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-14-oh-uzh-eti-skazochki-oh-uzh-eti-skazochniki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Ох уж эти сказочки, ох уж эти сказочники!.</span><br>
+                  <time>14 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-12-my-stroili-stroili-a-zachem.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Мы строили, строили… А зачем?.</span><br>
+                  <time>12 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-12-hronologicheskie-inektsii.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Хронологические инъекции.</span><br>
+                  <time>12 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-11-zaboristye-zabrala.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Забористые забрала.</span><br>
+                  <time>11 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-11-delo-pahnet-kirasirom.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Дело пахнет кирасиром.</span><br>
+                  <time>11 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-10-u-imperatora-nerona-v-gostinoj-zhili-dva-barona.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>У императора Нерона в гостиной жили два барона.</span><br>
+                  <time>10 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-10-pifagorovy-shtany-s-nachesom.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Пифагоровы штаны с начёсом.</span><br>
+                  <time>10 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-06-chudesa-chudesa-nebyvalschina.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Чудеса, чудеса, небывальщина.</span><br>
+                  <time>06 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-03-karl-marks-i-podkustovyj-vypolzen-chast-1.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Карл Маркс и подкустовый выползень. Часть 1.</span><br>
+                  <time>03 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-02-moneta-moneta.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Монета Moneta.</span><br>
+                  <time>02 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-02-lihoradka-antichnogo-vechera.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Лихорадка античного вечера.</span><br>
+                  <time>02 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-01-odnim-mahom-semeryh-protykahom.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Одним махом семерых протыкахом.</span><br>
+                  <time>01 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-31-manipulirovanie-manipulami-i-manufakturami.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Манипулирование манипулами и мануфактурами.</span><br>
+                  <time>31 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-30-zanimatelnoe-oslovedenie.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Занимательное ословедение.</span><br>
+                  <time>30 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-30-warum-die-mädchen-lieben-die-soldaten-darum-nicht-popularen-optimaten.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Warum die Mädchen lieben die Soldaten? Darum nicht Popularen! Optimaten!.</span><br>
+                  <time>30 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-13-zhoashen-dju-belle-poet-ruinist.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Жоашен дю Белле — поэт-руинист.</span><br>
+                  <time>13 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-13-uzbeki-v-moreplavanii.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Узбеки в мореплавании.</span><br>
+                  <time>13 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-13-suka-ljubov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Сука любовь.</span><br>
+                  <time>13 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-07-istoricheskaja-shrapnel.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Историческая шрапнель.</span><br>
+                  <time>07 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-07-drevnegrecheskaja-smokovnitsa.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Древнегреческая смоковница.</span><br>
+                  <time>07 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-04-istochniki-zatochniki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Источники-заточники.</span><br>
+                  <time>04 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-04-domen-ryzheborodyh-germanooptimaty-i-normannopopuljary.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: германооптиматы и норманнопопуляры.</span><br>
+                  <time>04 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-03-domen-ryzheborodyh-salo-jak-salo.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: сало як сало.</span><br>
+                  <time>03 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-03-domen-ryzheborodyh-papa-mozhet-papa-mozhet.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: папа может, папа может.</span><br>
+                  <time>03 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-02-domen-ryzheborodyh-tysjacha-melochej-kontejner-1.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: тысяча мелочей, контейнер №1.</span><br>
+                  <time>02 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-02-domen-ryzheborodyh-obschestvo-normano-germanskoj-druzhby.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: общество нормано-германской дружбы.</span><br>
+                  <time>02 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-30-domen-ryzheborodyh-tsezar-i-sprut.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: Цезарь и Спрут.</span><br>
+                  <time>30 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-30-domen-ryzheborodyh-mafija-bessmertna.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: мафия бессмертна.</span><br>
+                  <time>30 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-29-domen-ryzheborodyh-sitsilianskaja-zaschita.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: сицилианская защита.</span><br>
+                  <time>29 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-27-domen-ryzheborodyh-esli-papa-ne-razreshaet.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: если папа не разрешает.</span><br>
+                  <time>27 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-27-domen-ryzheborodyh-chto-takoe-druzja-rimskogo-naroda.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: что такое “друзья римского народа”.</span><br>
+                  <time>27 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-23-domen-ryzheborodyh-v-boj-vstupaet-formalnaja-logika.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: в бой вступает формальная логика.</span><br>
+                  <time>23 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-22-domen-ryzheborodyh-privet-iz-90-h.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: привет из 90-х.</span><br>
+                  <time>22 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-19-domen-ryzheborodyh-pamjatka-latifundistu.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: памятка латифундисту.</span><br>
+                  <time>19 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-19-domen-ryzheborodyh-dikie-divizii-rimskih-imperatorov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: “дикие дивизии” римских императоров.</span><br>
+                  <time>19 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-19-domen-ryzheborodyh-alternativnaja-imperija-nanosit-udar.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: альтернативная империя наносит удар.</span><br>
+                  <time>19 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-18-iz-za-lesa-iz-za-gor-pokazal-muzhik-kope.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Из-за леса, из-за гор показал мужик копьё.</span><br>
+                  <time>18 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-18-domen-ryzheborodyh.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых.</span><br>
+                  <time>18 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-11-volshebnik-nedouchka.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Волшебник недоучка.</span><br>
+                  <time>11 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-11-julij-tsezar-i-kantseljarskie-prinadlezhnosti.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Юлий Цезарь и канцелярские принадлежности.</span><br>
+                  <time>11 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-10-gorjat-shumjat-badaevskie-sklady.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Горят-шумят Бадаевские склады.</span><br>
+                  <time>10 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-05-prazdnik-neposlushanija.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Праздник непослушания.</span><br>
+                  <time>05 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-04-esli-topnu-ja-nogoju-pozovu-svoih-soldat.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Если топну я ногою, позову своих солдат….</span><br>
+                  <time>04 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-03-naveki-s-russkim-narodom-ili-my-tut-u-vas-posidim-nemnogo-poka-ziher-ne-utihnet.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Навеки с русским народом, или Мы тут у вас посидим немного, пока зихер не.</span><br>
+                  <time>03 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-27-a-shapochka-izvinite-otkuda.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>А шапочка, извините, откуда?.</span><br>
+                  <time>27 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-23-gaj-julij-kejnsar.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Гай Юлий Кейнсарь.</span><br>
+                  <time>23 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-21-kolossy-kolosja-i-barbariki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Колоссы, колосья и Барбарики.</span><br>
+                  <time>21 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-20-o-razorenii-rjazani-istoricheskaja-ugadajka-vypusk-5.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>О разорении Рязани (историческая угадайка, выпуск 5).</span><br>
+                  <time>20 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-20-asteriks-obeliks-i-hronicheskij-anahroniks.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Астерикс, Обеликс и хронический анахроникс.</span><br>
+                  <time>20 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-19-kvadratno-gnezdovaja-hristianiztsija-istoricheskaja-ugadajka-vypusk-4.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Квадратно-гнездовая христианизция (историческая угадайка, выпуск 4).</span><br>
+                  <time>19 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-15-sluchaj-na-beloozere-istoricheskaja-ugadajka-vypusk-3.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Случай на Белоозере (историческая угадайка, выпуск 3).</span><br>
+                  <time>15 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-15-ryzhij-ryzhego-sprosil-chem-ty-borodu-krasil.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Рыжий рыжего спросил: чем ты бороду красил?.</span><br>
+                  <time>15 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-15-balkon-kak-moveton.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Балкон как моветон.</span><br>
+                  <time>15 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-14-m-t-kachenovskij-alternativschik-xix-veka.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>М. Т. Каченовский: альтернативщик XIX века.</span><br>
+                  <time>14 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-14-istoricheskaja-ugadajka-vypusk-1.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Историческая угадайка. Выпуск 1.</span><br>
+                  <time>14 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-10-1492-god-kak-nachalo-novoj-ery.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>1492 год как начало новой эры.</span><br>
+                  <time>10 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-08-dvts-rabochih-i-krestjan.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>ДВЦ рабочих и крестьян.</span><br>
+                  <time>08 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-03-zernovoj-triller-dlinoj-v-1000-let.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Зерновой триллер длиной в 1000 лет.</span><br>
+                  <time>03 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-26-grad-kitezh-kak-ekologicheskaja-katastrofa.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Град Китеж как экологическая катастрофа.</span><br>
+                  <time>26 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-23-bitva-fridriha-barbarossy-s-polovtsami.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Битва Фридриха Барбароссы с половцами.</span><br>
+                  <time>23 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-20-russkie-i-rytsari.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Русские и рыцари.</span><br>
+                  <time>20 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-20-bitva-tarkvinija-s-rededej.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Битва Тарквиния с Редедей.</span><br>
+                  <time>20 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-18-zagadochnyj-gorod-pordugodev.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Загадочный город Пордугодев.</span><br>
+                  <time>18 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-20-na-ih-storone-kanaly.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>На их стороне каналы.</span><br>
+                  <time>20 апреля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-16-ty-ih-v-okno-oni-v-kalitku.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Ты их в окно — они в калитку.</span><br>
+                  <time>16 апреля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-15-zachem-on-voobsche-nuzhen-etot-novgorod.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Зачем он вообще нужен, этот Новгород?.</span><br>
+                  <time>15 апреля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-09-velikij-novgorod-faktorija-ili-forpost.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Великий Новгород: фактория или форпост?.</span><br>
+                  <time>09 апреля 2021 г.</time></a></li>
+            </ul>
+          </h5>
+          <h5 class="offcanvas-title">Материалы за 2021 г:
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li><a class="nav-link link-secondary" href="#2022-01-22-zhili-v-lesu-molilis-kolesu.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Жили в лесу, молились колесу.</span><br>
+                  <time>22 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2022-01-15-nemtsy-i-nemezida.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Немцы и Немезида.</span><br>
+                  <time>15 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2022-01-14-ser-dik-uittington-sergej-esenin-vikingi-i-kotiki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Сэр Дик Уиттингтон, Сергей Есенин, викинги и котики.</span><br>
+                  <time>14 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2022-01-13-lukan-i-lukavstvo.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Лукан и лукавство.</span><br>
+                  <time>13 января 2022 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-12-otyskalsja-sled-kopetrjasov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Отыскался след копьетрясов!.</span><br>
+                  <time>12 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-11-abyrvalg-noverlendskij.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Абырвалг Новерлендский.</span><br>
+                  <time>11 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-08-zhelezobetonnaja-korona-langobardov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Железобетонная корона лангобардов.</span><br>
+                  <time>08 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-06-slavjane-svoi-i-chuzhie.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Славяне “свои” и “чужие”.</span><br>
+                  <time>06 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-12-05-izjasnenie-nazvanij-nemetskih-gorodov-kotorye-prezhde-byli-slavjanskimi.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Изяснение названий немецких городов, которые прежде были славянскими.</span><br>
+                  <time>05 декабря 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-25-mezhdu-pervoj-i-vtoroj-pereryvchik-nebolshoj.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Между первой и второй перерывчик небольшой.</span><br>
+                  <time>25 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-22-italija-ne-rezinovaja.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Италия не резиновая.</span><br>
+                  <time>22 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-12-gotskij-dvor-na-ostrove-bujane.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Готский двор на острове Буяне.</span><br>
+                  <time>12 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-11-03-rossija-rodina-slonov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Россия — родина слонов.</span><br>
+                  <time>03 ноября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-10-16-aleksandr-makedonskij-robinzon-kruzo-i-nepravilnye-pchely.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Александр Македонский, Робинзон Крузо и “неправильные пчелы”.</span><br>
+                  <time>16 октября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-18-what-the-schit.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>What the щит?.</span><br>
+                  <time>18 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-14-oh-uzh-eti-skazochki-oh-uzh-eti-skazochniki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Ох уж эти сказочки, ох уж эти сказочники!.</span><br>
+                  <time>14 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-12-my-stroili-stroili-a-zachem.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Мы строили, строили… А зачем?.</span><br>
+                  <time>12 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-12-hronologicheskie-inektsii.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Хронологические инъекции.</span><br>
+                  <time>12 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-11-zaboristye-zabrala.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Забористые забрала.</span><br>
+                  <time>11 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-11-delo-pahnet-kirasirom.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Дело пахнет кирасиром.</span><br>
+                  <time>11 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-10-u-imperatora-nerona-v-gostinoj-zhili-dva-barona.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>У императора Нерона в гостиной жили два барона.</span><br>
+                  <time>10 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-10-pifagorovy-shtany-s-nachesom.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Пифагоровы штаны с начёсом.</span><br>
+                  <time>10 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-06-chudesa-chudesa-nebyvalschina.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Чудеса, чудеса, небывальщина.</span><br>
+                  <time>06 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-03-karl-marks-i-podkustovyj-vypolzen-chast-1.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Карл Маркс и подкустовый выползень. Часть 1.</span><br>
+                  <time>03 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-02-moneta-moneta.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Монета Moneta.</span><br>
+                  <time>02 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-02-lihoradka-antichnogo-vechera.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Лихорадка античного вечера.</span><br>
+                  <time>02 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-09-01-odnim-mahom-semeryh-protykahom.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Одним махом семерых протыкахом.</span><br>
+                  <time>01 сентября 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-31-manipulirovanie-manipulami-i-manufakturami.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Манипулирование манипулами и мануфактурами.</span><br>
+                  <time>31 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-30-zanimatelnoe-oslovedenie.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Занимательное ословедение.</span><br>
+                  <time>30 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-30-warum-die-mädchen-lieben-die-soldaten-darum-nicht-popularen-optimaten.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Warum die Mädchen lieben die Soldaten? Darum nicht Popularen! Optimaten!.</span><br>
+                  <time>30 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-13-zhoashen-dju-belle-poet-ruinist.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Жоашен дю Белле — поэт-руинист.</span><br>
+                  <time>13 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-13-uzbeki-v-moreplavanii.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Узбеки в мореплавании.</span><br>
+                  <time>13 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-13-suka-ljubov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Сука любовь.</span><br>
+                  <time>13 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-07-istoricheskaja-shrapnel.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Историческая шрапнель.</span><br>
+                  <time>07 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-07-drevnegrecheskaja-smokovnitsa.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Древнегреческая смоковница.</span><br>
+                  <time>07 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-04-istochniki-zatochniki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Источники-заточники.</span><br>
+                  <time>04 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-04-domen-ryzheborodyh-germanooptimaty-i-normannopopuljary.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: германооптиматы и норманнопопуляры.</span><br>
+                  <time>04 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-03-domen-ryzheborodyh-salo-jak-salo.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: сало як сало.</span><br>
+                  <time>03 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-03-domen-ryzheborodyh-papa-mozhet-papa-mozhet.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: папа может, папа может.</span><br>
+                  <time>03 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-02-domen-ryzheborodyh-tysjacha-melochej-kontejner-1.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: тысяча мелочей, контейнер №1.</span><br>
+                  <time>02 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-08-02-domen-ryzheborodyh-obschestvo-normano-germanskoj-druzhby.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: общество нормано-германской дружбы.</span><br>
+                  <time>02 августа 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-30-domen-ryzheborodyh-tsezar-i-sprut.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: Цезарь и Спрут.</span><br>
+                  <time>30 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-30-domen-ryzheborodyh-mafija-bessmertna.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: мафия бессмертна.</span><br>
+                  <time>30 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-29-domen-ryzheborodyh-sitsilianskaja-zaschita.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: сицилианская защита.</span><br>
+                  <time>29 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-27-domen-ryzheborodyh-esli-papa-ne-razreshaet.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: если папа не разрешает.</span><br>
+                  <time>27 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-27-domen-ryzheborodyh-chto-takoe-druzja-rimskogo-naroda.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: что такое “друзья римского народа”.</span><br>
+                  <time>27 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-23-domen-ryzheborodyh-v-boj-vstupaet-formalnaja-logika.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: в бой вступает формальная логика.</span><br>
+                  <time>23 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-22-domen-ryzheborodyh-privet-iz-90-h.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: привет из 90-х.</span><br>
+                  <time>22 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-19-domen-ryzheborodyh-pamjatka-latifundistu.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: памятка латифундисту.</span><br>
+                  <time>19 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-19-domen-ryzheborodyh-dikie-divizii-rimskih-imperatorov.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: “дикие дивизии” римских императоров.</span><br>
+                  <time>19 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-19-domen-ryzheborodyh-alternativnaja-imperija-nanosit-udar.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых: альтернативная империя наносит удар.</span><br>
+                  <time>19 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-18-iz-za-lesa-iz-za-gor-pokazal-muzhik-kope.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Из-за леса, из-за гор показал мужик копьё.</span><br>
+                  <time>18 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-18-domen-ryzheborodyh.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Домен Рыжебородых.</span><br>
+                  <time>18 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-11-volshebnik-nedouchka.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Волшебник недоучка.</span><br>
+                  <time>11 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-11-julij-tsezar-i-kantseljarskie-prinadlezhnosti.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Юлий Цезарь и канцелярские принадлежности.</span><br>
+                  <time>11 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-10-gorjat-shumjat-badaevskie-sklady.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Горят-шумят Бадаевские склады.</span><br>
+                  <time>10 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-05-prazdnik-neposlushanija.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Праздник непослушания.</span><br>
+                  <time>05 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-04-esli-topnu-ja-nogoju-pozovu-svoih-soldat.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Если топну я ногою, позову своих солдат….</span><br>
+                  <time>04 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-07-03-naveki-s-russkim-narodom-ili-my-tut-u-vas-posidim-nemnogo-poka-ziher-ne-utihnet.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Навеки с русским народом, или Мы тут у вас посидим немного, пока зихер не.</span><br>
+                  <time>03 июля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-27-a-shapochka-izvinite-otkuda.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>А шапочка, извините, откуда?.</span><br>
+                  <time>27 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-23-gaj-julij-kejnsar.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Гай Юлий Кейнсарь.</span><br>
+                  <time>23 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-21-kolossy-kolosja-i-barbariki.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Колоссы, колосья и Барбарики.</span><br>
+                  <time>21 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-20-o-razorenii-rjazani-istoricheskaja-ugadajka-vypusk-5.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>О разорении Рязани (историческая угадайка, выпуск 5).</span><br>
+                  <time>20 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-20-asteriks-obeliks-i-hronicheskij-anahroniks.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Астерикс, Обеликс и хронический анахроникс.</span><br>
+                  <time>20 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-19-kvadratno-gnezdovaja-hristianiztsija-istoricheskaja-ugadajka-vypusk-4.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Квадратно-гнездовая христианизция (историческая угадайка, выпуск 4).</span><br>
+                  <time>19 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-15-sluchaj-na-beloozere-istoricheskaja-ugadajka-vypusk-3.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Случай на Белоозере (историческая угадайка, выпуск 3).</span><br>
+                  <time>15 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-15-ryzhij-ryzhego-sprosil-chem-ty-borodu-krasil.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Рыжий рыжего спросил: чем ты бороду красил?.</span><br>
+                  <time>15 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-15-balkon-kak-moveton.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Балкон как моветон.</span><br>
+                  <time>15 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-14-m-t-kachenovskij-alternativschik-xix-veka.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>М. Т. Каченовский: альтернативщик XIX века.</span><br>
+                  <time>14 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-14-istoricheskaja-ugadajka-vypusk-1.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Историческая угадайка. Выпуск 1.</span><br>
+                  <time>14 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-10-1492-god-kak-nachalo-novoj-ery.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>1492 год как начало новой эры.</span><br>
+                  <time>10 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-08-dvts-rabochih-i-krestjan.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>ДВЦ рабочих и крестьян.</span><br>
+                  <time>08 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-06-03-zernovoj-triller-dlinoj-v-1000-let.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Зерновой триллер длиной в 1000 лет.</span><br>
+                  <time>03 июня 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-26-grad-kitezh-kak-ekologicheskaja-katastrofa.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Град Китеж как экологическая катастрофа.</span><br>
+                  <time>26 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-23-bitva-fridriha-barbarossy-s-polovtsami.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Битва Фридриха Барбароссы с половцами.</span><br>
+                  <time>23 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-20-russkie-i-rytsari.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Русские и рыцари.</span><br>
+                  <time>20 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-20-bitva-tarkvinija-s-rededej.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Битва Тарквиния с Редедей.</span><br>
+                  <time>20 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-05-18-zagadochnyj-gorod-pordugodev.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Загадочный город Пордугодев.</span><br>
+                  <time>18 мая 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-20-na-ih-storone-kanaly.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>На их стороне каналы.</span><br>
+                  <time>20 апреля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-16-ty-ih-v-okno-oni-v-kalitku.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Ты их в окно — они в калитку.</span><br>
+                  <time>16 апреля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-15-zachem-on-voobsche-nuzhen-etot-novgorod.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Зачем он вообще нужен, этот Новгород?.</span><br>
+                  <time>15 апреля 2021 г.</time></a></li>
+              <li><a class="nav-link link-secondary" href="#2021-04-09-velikij-novgorod-faktorija-ili-forpost.md"><svg class="link-secondary aside-icon"><use xlink:href="#blockquote-left"></use></svg><span>Великий Новгород: фактория или форпост?.</span><br>
+                  <time>09 апреля 2021 г.</time></a></li>
+            </ul>
+          </h5>
         </div>
       </aside>
       <article>
-        <section class="container"><h1>Альтернатива без покрышки и дна</h1>
+        <section class="container">
+          <div class="comfortable-reading mt-3"><h1>Альтернатива без покрышки и дна</h1>
 <pre><code>В моей альтернативе ни покрышки, ни дна;
 Я правда стою, но непонятно на чем.
 Все уже забыли, в чем наша вина,
@@ -45,86 +396,202 @@
                                   БГ
 </code></pre>
 <p><strong>Здравствуйте, на связи Михаил Беляков aka Yababay.</strong></p>
-<p>Решил собрать здесь всё написанное мной на историческую тематику, за
-исключением цикла &quot;Домен Агенобарбов&quot;
-(он пока предствляет собой лишь наброски, хотя есть планы превратить их в что-то вроде монографии).</p>
-<p>Размещенные здесь материалы можно также посмотреть
+<p>Решил собрать здесь всё написанное мной на историческую тематику.</p>
+<p>Размещенные здесь материалы опубликованы также на
 на <a href="https://yababay.medium.com">Medium</a> и <a href="https://t.me/barn_yababay_ru">Telegram-канале</a>.</p>
 <p>Для более удобной навигации по материалам истользуйте, пожалуйста,
 ссылку «Показать список материалов» слева вверху. Там более актуальный перечень.
 Ссылки, размещенные ниже - скорее для поисковых систем, чем для людей, но тоже работают.</p>
 <iframe width="790" height="444" src="https://www.youtube.com/embed/raoyqp0Z1MM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<ul>
-<li><a href="#2021-12-12-00-00-otyskalsja-sled-kopetrjasov.md">Отыскался след копьетрясов!</a></li>
-<li><a href="#2021-12-11-00-00-abyrvalg-noverlendskij.md">Абырвалг Новерлендский</a></li>
-<li><a href="#2021-12-08-00-00-zhelezobetonnaja-korona-langobardov.md">Железобетонная корона лангобардов</a></li>
-<li><a href="#2021-12-06-00-00-slavjane-svoi-i-chuzhie.md">Славяне “свои” и “чужие”</a></li>
-<li><a href="#2021-11-25-00-00-mezhdu-pervoj-i-vtoroj-pereryvchik-nebolshoj.md">Между первой и второй перерывчик небольшой</a></li>
-<li><a href="#2021-11-22-00-00-italija-ne-rezinovaja.md">Италия не резиновая</a></li>
-<li><a href="#2021-11-12-00-00-gotskij-dvor-na-ostrove-bujane.md">Готский двор на острове Буяне</a></li>
-<li><a href="#2021-11-03_-----------------------fff5456a6603.md">Россия — родина слонов</a></li>
-<li><a href="#2021-10-16_-------------------------------------------------------------a1492ef2064c.md">Александр Македонский, Робинзон Крузо и “неправильные пчелы”</a></li>
-<li><a href="#2021-09-18_What-the------a6098afd435c.md">What the щит?</a></li>
-<li><a href="#2021-09-13_------------------------------------------3bfdd6942be.md">Ох уж эти сказочки, ох уж эти сказочники!</a></li>
-<li><a href="#2021-09-12_------------------------------7b25f0021903.md">Мы строили, строили… А зачем?</a></li>
-<li><a href="#2021-09-11_-------------------196f97d28552.md">Забористые забрала</a></li>
-<li><a href="#2021-09-11_----------------------8d661af15b14.md">Дело пахнет кирасиром</a></li>
-<li><a href="#2021-09-11_-------------------------b04f46605836.md">Хронологические инъекции</a></li>
-<li><a href="#2021-09-10_---------------------------599f362f4fed.md">Пифагоровы штаны с начёсом</a></li>
-<li><a href="#2021-09-09_-----------------------------a81a735e89ce.md">Чудеса, чудеса, небывальщина</a></li>
-<li><a href="#2021-09-09_-----------------------------------------------8ecf313d0f52.md">У императора Нерона в гостиной жили два барона</a></li>
-<li><a href="#2021-09-06_--------------------9987ec4ce3d7.md">…а осадочек остался</a></li>
-<li><a href="#2021-09-06_----------------------2-263e328c9bfe.md">…а осадочек остался - 2</a></li>
-<li><a href="#2021-09-03_------------------------------------------1-1efcaa13c326.md">Карл Маркс и подкустовый выползень</a></li>
-<li><a href="#2021-09-02_-------Moneta-8949e64e92cb.md">Монета Moneta</a></li>
-<li><a href="#2021-09-02_---------------------------92113c5b48c0.md">Лихорадка античного вечера</a></li>
-<li><a href="#2021-09-01_-------------------------------6542b23ed4ef.md">Одним махом семерых протыкахом</a></li>
-<li><a href="#2021-08-31_-------------------------------------------e1ca0ec61e55.md">Манипулирование манипулами и мануфактурами</a></li>
-<li><a href="#2021-08-30_--------------------------1d20666a96d5.md">Занимательное ословедение</a></li>
-<li><a href="#2021-08-13_------------e05c28ed9f5b.md">Сука-любовь</a></li>
-<li><a href="#2021-08-13_----------------------62a4af6a9474.md">Узбеки в мореплавании</a></li>
-<li><a href="#2021-08-12_-------------------------------163d1cf804a2.md">Жоашен дю Белле — поэт-руинист</a></li>
-<li><a href="#2021-08-07_----------------------96cfae7766c5.md">Историческая шрапнель</a></li>
-<li><a href="#2021-08-06_---------------------------d003da26205d.md">Древнегреческая смоковница</a></li>
-<li><a href="#2021-08-04_--------------------94de0b9cf0b9.md">Источники-заточники</a></li>
-<li><a href="#2021-07-17_------------------------------------------4380974c2242.md">Из-за леса, из-за гор показал мужик копьё</a></li>
-<li><a href="#2021-07-11_-------------------561d6b35f798.md">Волшебник недоучка</a></li>
-<li><a href="#2021-07-11_------------------------------------------d4f2350d12b.md">Юлий Цезарь и канцелярские принадлежности</a></li>
-<li><a href="#2021-07-10_------------------------------26315bbe1490.md">Горят-шумят Бадаевские склады</a></li>
-<li><a href="#2021-07-05_----------------------2469b3b83daf.md">Праздник непослушания</a></li>
-<li><a href="#2021-07-04_-----------------------------------------61cacb0d7460.md">Если топну я ногою, позову своих солдат…</a></li>
-<li><a href="#2021-07-03_-----------------------------91b56a3ea3b1.md">А шапочка, извините, откуда?</a></li>
-<li><a href="#2021-07-03_--------------------------------------------2a3bf1967c87.md">(Ана)хроники Вильяма Шекспира (продолжение)</a></li>
-<li><a href="#2021-07-03_----------------------------------------------------------------------------------c0b901595452.md">Навеки с русским народом, или Мы тут у вас посидим немного, пока зихер не</a></li>
-<li><a href="#2021-06-27_------------------------------2197055f7cce.md">(Ана)хроники Вильяма Шекспира</a></li>
-<li><a href="#2021-06-27_-----------------------------------bb08d622f220.md">…дык ёлы-палы, здравствуй, сестра!</a></li>
-<li><a href="#2021-06-23_------------------9717de6a65b3.md">Гай Юлий Кейнсарь</a></li>
-<li><a href="#2021-06-21_-----------------------------4d36e1d2c56.md">Колоссы, колосья и Барбарики</a></li>
-<li><a href="#2021-06-20_-------------------------------------------18bf69113d2d.md">Астерикс, Обеликс и хронический анахроникс</a></li>
-<li><a href="#2021-06-20_--------------------------------------------------5--e8500b9d115a.md">Историческая угадайка, выпуск 4. О разорении Рязани</a></li>
-<li><a href="#2021-06-19_-----------------------------------------------------------------4--93da2bd1913e.md">Историческая угадайка, выпуск 3. Квадратно-гнездовая христианизция</a></li>
-<li><a href="#2021-06-15_-------------------bab76260e3bf.md">Балкон как моветон</a></li>
-<li><a href="#2021-06-15_--------------------------------------------94471147851.md">Рыжий рыжего спросил: чем ты бороду красил?</a></li>
-<li><a href="#2021-06-15_---------------------------------------------------3--66897bb27c6.md">Историческая угадайка, выпуск 2. Случай на Белоозере</a></li>
-<li><a href="#2021-06-14_------------------------------1-fb233c327578.md">Историческая угадайка. Выпуск 1</a></li>
-<li><a href="#2021-06-13_----------------------------------XIX------30aba81dad.md">М. Т. Каченовский: альтернативщик XIX века</a></li>
-<li><a href="#2021-06-09_1492--------------------------b1cedb1452e6.md">1492 год как начало новой эры</a></li>
-<li><a href="#2021-06-07_-----------------------7c456b4f2e54.md">ДВЦ рабочих и крестьян</a></li>
-<li><a href="#2021-06-02_--------------------------1000-----6c31e5c89468.md">Зерновой триллер длиной в 1000 лет</a></li>
-<li><a href="#2021-05-26_----------------------------------------c4acfc33005c.md">Град Китеж как экологическая катастрофа</a></li>
-<li><a href="#2021-05-23_--------------------------------------d964d7f75c0d.md">Битва Фридриха Барбароссы с половцами</a></li>
-<li><a href="#2021-05-20_--------------------------45b9cde7428a.md">Битва Тарквиния с Редедей</a></li>
-<li><a href="#2021-05-19_-----------------ec388b5f118e.md">Русские и рыцари</a></li>
-<li><a href="#2021-05-18_----------------------------554fb77d6abd.md">Загадочный город Пордугодев</a></li>
-<li><a href="#2021-04-25_---------------------4edb4b818691.md">На их стороне каналы</a></li>
-<li><a href="#2021-04-20_------------------------------e1a6635a319b.md">“…и испортила ему всю ссылку”</a></li>
-<li><a href="#2021-04-16_-----------------------------ff9c6c76c361.md">Ты их в окно — они в калитку</a></li>
-<li><a href="#2021-04-15_--------------------------------------15feea19ba28.md">Зачем он вообще нужен, этот Новгород?</a></li>
-<li><a href="#2021-04-09_----------------------------------------20269fa30b95.md">Великий Новгород: фактория или форпост?</a></li>
-</ul>
 
+          </div>
         </section>
       </article>
+      <section class="container">
+        <div class="accordion" id="list-of-articles" style="max-width: 80ch; margin: 3rem auto;">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="list-of-articles-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#list-of-articles-collapse" aria-expanded="true" aria-controls="list-of-articles-collapse">Список всех материалов (нажмите чтобы развернуть)</button>
+            </h2>
+            <div class="accordion-collapse collapse" id="list-of-articles-collapse" aria-labelledby="list-of-articles-header" data-bs-parent="#list-of-articles">
+              <div class="accordion-body">
+                <div class="comfortable-reading mt-3 char-80">
+                  <h2>Материалы за 2022 г:</h2>
+                  <ul>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-22-zhili-v-lesu-molilis-kolesu.md"><span>Жили в лесу, молились колесу</span>&nbsp;<span>[22 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-15-nemtsy-i-nemezida.md"><span>Немцы и Немезида</span>&nbsp;<span>[15 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-14-ser-dik-uittington-sergej-esenin-vikingi-i-kotiki.md"><span>Сэр Дик Уиттингтон, Сергей Есенин, викинги и котики</span>&nbsp;<span>[14 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-13-lukan-i-lukavstvo.md"><span>Лукан и лукавство</span>&nbsp;<span>[13 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-12-otyskalsja-sled-kopetrjasov.md"><span>Отыскался след копьетрясов!</span>&nbsp;<span>[12 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-11-abyrvalg-noverlendskij.md"><span>Абырвалг Новерлендский</span>&nbsp;<span>[11 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-08-zhelezobetonnaja-korona-langobardov.md"><span>Железобетонная корона лангобардов</span>&nbsp;<span>[08 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-06-slavjane-svoi-i-chuzhie.md"><span>Славяне “свои” и “чужие”</span>&nbsp;<span>[06 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-05-izjasnenie-nazvanij-nemetskih-gorodov-kotorye-prezhde-byli-slavjanskimi.md"><span>Изяснение названий немецких городов, которые прежде были славянскими</span>&nbsp;<span>[05 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-25-mezhdu-pervoj-i-vtoroj-pereryvchik-nebolshoj.md"><span>Между первой и второй перерывчик небольшой</span>&nbsp;<span>[25 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-22-italija-ne-rezinovaja.md"><span>Италия не резиновая</span>&nbsp;<span>[22 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-12-gotskij-dvor-na-ostrove-bujane.md"><span>Готский двор на острове Буяне</span>&nbsp;<span>[12 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-03-rossija-rodina-slonov.md"><span>Россия — родина слонов</span>&nbsp;<span>[03 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-10-16-aleksandr-makedonskij-robinzon-kruzo-i-nepravilnye-pchely.md"><span>Александр Македонский, Робинзон Крузо и “неправильные пчелы”</span>&nbsp;<span>[16 октября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-18-what-the-schit.md"><span>What the щит?</span>&nbsp;<span>[18 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-14-oh-uzh-eti-skazochki-oh-uzh-eti-skazochniki.md"><span>Ох уж эти сказочки, ох уж эти сказочники!</span>&nbsp;<span>[14 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-12-my-stroili-stroili-a-zachem.md"><span>Мы строили, строили… А зачем?</span>&nbsp;<span>[12 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-12-hronologicheskie-inektsii.md"><span>Хронологические инъекции</span>&nbsp;<span>[12 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-11-zaboristye-zabrala.md"><span>Забористые забрала</span>&nbsp;<span>[11 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-11-delo-pahnet-kirasirom.md"><span>Дело пахнет кирасиром</span>&nbsp;<span>[11 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-10-u-imperatora-nerona-v-gostinoj-zhili-dva-barona.md"><span>У императора Нерона в гостиной жили два барона</span>&nbsp;<span>[10 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-10-pifagorovy-shtany-s-nachesom.md"><span>Пифагоровы штаны с начёсом</span>&nbsp;<span>[10 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-06-chudesa-chudesa-nebyvalschina.md"><span>Чудеса, чудеса, небывальщина</span>&nbsp;<span>[06 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-03-karl-marks-i-podkustovyj-vypolzen-chast-1.md"><span>Карл Маркс и подкустовый выползень. Часть 1</span>&nbsp;<span>[03 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-02-moneta-moneta.md"><span>Монета Moneta</span>&nbsp;<span>[02 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-02-lihoradka-antichnogo-vechera.md"><span>Лихорадка античного вечера</span>&nbsp;<span>[02 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-01-odnim-mahom-semeryh-protykahom.md"><span>Одним махом семерых протыкахом</span>&nbsp;<span>[01 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-31-manipulirovanie-manipulami-i-manufakturami.md"><span>Манипулирование манипулами и мануфактурами</span>&nbsp;<span>[31 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-30-zanimatelnoe-oslovedenie.md"><span>Занимательное ословедение</span>&nbsp;<span>[30 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-30-warum-die-mädchen-lieben-die-soldaten-darum-nicht-popularen-optimaten.md"><span>Warum die Mädchen lieben die Soldaten? Darum nicht Popularen! Optimaten!</span>&nbsp;<span>[30 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-13-zhoashen-dju-belle-poet-ruinist.md"><span>Жоашен дю Белле — поэт-руинист</span>&nbsp;<span>[13 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-13-uzbeki-v-moreplavanii.md"><span>Узбеки в мореплавании</span>&nbsp;<span>[13 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-13-suka-ljubov.md"><span>Сука любовь</span>&nbsp;<span>[13 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-07-istoricheskaja-shrapnel.md"><span>Историческая шрапнель</span>&nbsp;<span>[07 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-07-drevnegrecheskaja-smokovnitsa.md"><span>Древнегреческая смоковница</span>&nbsp;<span>[07 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-04-istochniki-zatochniki.md"><span>Источники-заточники</span>&nbsp;<span>[04 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-04-domen-ryzheborodyh-germanooptimaty-i-normannopopuljary.md"><span>Домен Рыжебородых: германооптиматы и норманнопопуляры</span>&nbsp;<span>[04 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-03-domen-ryzheborodyh-salo-jak-salo.md"><span>Домен Рыжебородых: сало як сало</span>&nbsp;<span>[03 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-03-domen-ryzheborodyh-papa-mozhet-papa-mozhet.md"><span>Домен Рыжебородых: папа может, папа может</span>&nbsp;<span>[03 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-02-domen-ryzheborodyh-tysjacha-melochej-kontejner-1.md"><span>Домен Рыжебородых: тысяча мелочей, контейнер №1</span>&nbsp;<span>[02 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-02-domen-ryzheborodyh-obschestvo-normano-germanskoj-druzhby.md"><span>Домен Рыжебородых: общество нормано-германской дружбы</span>&nbsp;<span>[02 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-30-domen-ryzheborodyh-tsezar-i-sprut.md"><span>Домен Рыжебородых: Цезарь и Спрут</span>&nbsp;<span>[30 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-30-domen-ryzheborodyh-mafija-bessmertna.md"><span>Домен Рыжебородых: мафия бессмертна</span>&nbsp;<span>[30 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-29-domen-ryzheborodyh-sitsilianskaja-zaschita.md"><span>Домен Рыжебородых: сицилианская защита</span>&nbsp;<span>[29 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-27-domen-ryzheborodyh-esli-papa-ne-razreshaet.md"><span>Домен Рыжебородых: если папа не разрешает</span>&nbsp;<span>[27 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-27-domen-ryzheborodyh-chto-takoe-druzja-rimskogo-naroda.md"><span>Домен Рыжебородых: что такое “друзья римского народа”</span>&nbsp;<span>[27 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-23-domen-ryzheborodyh-v-boj-vstupaet-formalnaja-logika.md"><span>Домен Рыжебородых: в бой вступает формальная логика</span>&nbsp;<span>[23 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-22-domen-ryzheborodyh-privet-iz-90-h.md"><span>Домен Рыжебородых: привет из 90-х</span>&nbsp;<span>[22 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-19-domen-ryzheborodyh-pamjatka-latifundistu.md"><span>Домен Рыжебородых: памятка латифундисту</span>&nbsp;<span>[19 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-19-domen-ryzheborodyh-dikie-divizii-rimskih-imperatorov.md"><span>Домен Рыжебородых: “дикие дивизии” римских императоров</span>&nbsp;<span>[19 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-19-domen-ryzheborodyh-alternativnaja-imperija-nanosit-udar.md"><span>Домен Рыжебородых: альтернативная империя наносит удар</span>&nbsp;<span>[19 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-18-iz-za-lesa-iz-za-gor-pokazal-muzhik-kope.md"><span>Из-за леса, из-за гор показал мужик копьё</span>&nbsp;<span>[18 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-18-domen-ryzheborodyh.md"><span>Домен Рыжебородых</span>&nbsp;<span>[18 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-11-volshebnik-nedouchka.md"><span>Волшебник недоучка</span>&nbsp;<span>[11 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-11-julij-tsezar-i-kantseljarskie-prinadlezhnosti.md"><span>Юлий Цезарь и канцелярские принадлежности</span>&nbsp;<span>[11 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-10-gorjat-shumjat-badaevskie-sklady.md"><span>Горят-шумят Бадаевские склады</span>&nbsp;<span>[10 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-05-prazdnik-neposlushanija.md"><span>Праздник непослушания</span>&nbsp;<span>[05 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-04-esli-topnu-ja-nogoju-pozovu-svoih-soldat.md"><span>Если топну я ногою, позову своих солдат…</span>&nbsp;<span>[04 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-03-naveki-s-russkim-narodom-ili-my-tut-u-vas-posidim-nemnogo-poka-ziher-ne-utihnet.md"><span>Навеки с русским народом, или Мы тут у вас посидим немного, пока зихер не</span>&nbsp;<span>[03 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-27-a-shapochka-izvinite-otkuda.md"><span>А шапочка, извините, откуда?</span>&nbsp;<span>[27 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-23-gaj-julij-kejnsar.md"><span>Гай Юлий Кейнсарь</span>&nbsp;<span>[23 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-21-kolossy-kolosja-i-barbariki.md"><span>Колоссы, колосья и Барбарики</span>&nbsp;<span>[21 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-20-o-razorenii-rjazani-istoricheskaja-ugadajka-vypusk-5.md"><span>О разорении Рязани (историческая угадайка, выпуск 5)</span>&nbsp;<span>[20 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-20-asteriks-obeliks-i-hronicheskij-anahroniks.md"><span>Астерикс, Обеликс и хронический анахроникс</span>&nbsp;<span>[20 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-19-kvadratno-gnezdovaja-hristianiztsija-istoricheskaja-ugadajka-vypusk-4.md"><span>Квадратно-гнездовая христианизция (историческая угадайка, выпуск 4)</span>&nbsp;<span>[19 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-15-sluchaj-na-beloozere-istoricheskaja-ugadajka-vypusk-3.md"><span>Случай на Белоозере (историческая угадайка, выпуск 3)</span>&nbsp;<span>[15 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-15-ryzhij-ryzhego-sprosil-chem-ty-borodu-krasil.md"><span>Рыжий рыжего спросил: чем ты бороду красил?</span>&nbsp;<span>[15 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-15-balkon-kak-moveton.md"><span>Балкон как моветон</span>&nbsp;<span>[15 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-14-m-t-kachenovskij-alternativschik-xix-veka.md"><span>М. Т. Каченовский: альтернативщик XIX века</span>&nbsp;<span>[14 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-14-istoricheskaja-ugadajka-vypusk-1.md"><span>Историческая угадайка. Выпуск 1</span>&nbsp;<span>[14 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-10-1492-god-kak-nachalo-novoj-ery.md"><span>1492 год как начало новой эры</span>&nbsp;<span>[10 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-08-dvts-rabochih-i-krestjan.md"><span>ДВЦ рабочих и крестьян</span>&nbsp;<span>[08 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-03-zernovoj-triller-dlinoj-v-1000-let.md"><span>Зерновой триллер длиной в 1000 лет</span>&nbsp;<span>[03 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-26-grad-kitezh-kak-ekologicheskaja-katastrofa.md"><span>Град Китеж как экологическая катастрофа</span>&nbsp;<span>[26 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-23-bitva-fridriha-barbarossy-s-polovtsami.md"><span>Битва Фридриха Барбароссы с половцами</span>&nbsp;<span>[23 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-20-russkie-i-rytsari.md"><span>Русские и рыцари</span>&nbsp;<span>[20 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-20-bitva-tarkvinija-s-rededej.md"><span>Битва Тарквиния с Редедей</span>&nbsp;<span>[20 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-18-zagadochnyj-gorod-pordugodev.md"><span>Загадочный город Пордугодев</span>&nbsp;<span>[18 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-20-na-ih-storone-kanaly.md"><span>На их стороне каналы</span>&nbsp;<span>[20 апреля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-16-ty-ih-v-okno-oni-v-kalitku.md"><span>Ты их в окно — они в калитку</span>&nbsp;<span>[16 апреля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-15-zachem-on-voobsche-nuzhen-etot-novgorod.md"><span>Зачем он вообще нужен, этот Новгород?</span>&nbsp;<span>[15 апреля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-09-velikij-novgorod-faktorija-ili-forpost.md"><span>Великий Новгород: фактория или форпост?</span>&nbsp;<span>[09 апреля 2021 г.]</span></a></li>
+                  </ul>
+                  <h2>Материалы за 2021 г:</h2>
+                  <ul>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-22-zhili-v-lesu-molilis-kolesu.md"><span>Жили в лесу, молились колесу</span>&nbsp;<span>[22 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-15-nemtsy-i-nemezida.md"><span>Немцы и Немезида</span>&nbsp;<span>[15 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-14-ser-dik-uittington-sergej-esenin-vikingi-i-kotiki.md"><span>Сэр Дик Уиттингтон, Сергей Есенин, викинги и котики</span>&nbsp;<span>[14 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2022-01-13-lukan-i-lukavstvo.md"><span>Лукан и лукавство</span>&nbsp;<span>[13 января 2022 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-12-otyskalsja-sled-kopetrjasov.md"><span>Отыскался след копьетрясов!</span>&nbsp;<span>[12 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-11-abyrvalg-noverlendskij.md"><span>Абырвалг Новерлендский</span>&nbsp;<span>[11 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-08-zhelezobetonnaja-korona-langobardov.md"><span>Железобетонная корона лангобардов</span>&nbsp;<span>[08 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-06-slavjane-svoi-i-chuzhie.md"><span>Славяне “свои” и “чужие”</span>&nbsp;<span>[06 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-12-05-izjasnenie-nazvanij-nemetskih-gorodov-kotorye-prezhde-byli-slavjanskimi.md"><span>Изяснение названий немецких городов, которые прежде были славянскими</span>&nbsp;<span>[05 декабря 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-25-mezhdu-pervoj-i-vtoroj-pereryvchik-nebolshoj.md"><span>Между первой и второй перерывчик небольшой</span>&nbsp;<span>[25 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-22-italija-ne-rezinovaja.md"><span>Италия не резиновая</span>&nbsp;<span>[22 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-12-gotskij-dvor-na-ostrove-bujane.md"><span>Готский двор на острове Буяне</span>&nbsp;<span>[12 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-11-03-rossija-rodina-slonov.md"><span>Россия — родина слонов</span>&nbsp;<span>[03 ноября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-10-16-aleksandr-makedonskij-robinzon-kruzo-i-nepravilnye-pchely.md"><span>Александр Македонский, Робинзон Крузо и “неправильные пчелы”</span>&nbsp;<span>[16 октября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-18-what-the-schit.md"><span>What the щит?</span>&nbsp;<span>[18 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-14-oh-uzh-eti-skazochki-oh-uzh-eti-skazochniki.md"><span>Ох уж эти сказочки, ох уж эти сказочники!</span>&nbsp;<span>[14 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-12-my-stroili-stroili-a-zachem.md"><span>Мы строили, строили… А зачем?</span>&nbsp;<span>[12 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-12-hronologicheskie-inektsii.md"><span>Хронологические инъекции</span>&nbsp;<span>[12 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-11-zaboristye-zabrala.md"><span>Забористые забрала</span>&nbsp;<span>[11 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-11-delo-pahnet-kirasirom.md"><span>Дело пахнет кирасиром</span>&nbsp;<span>[11 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-10-u-imperatora-nerona-v-gostinoj-zhili-dva-barona.md"><span>У императора Нерона в гостиной жили два барона</span>&nbsp;<span>[10 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-10-pifagorovy-shtany-s-nachesom.md"><span>Пифагоровы штаны с начёсом</span>&nbsp;<span>[10 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-06-chudesa-chudesa-nebyvalschina.md"><span>Чудеса, чудеса, небывальщина</span>&nbsp;<span>[06 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-03-karl-marks-i-podkustovyj-vypolzen-chast-1.md"><span>Карл Маркс и подкустовый выползень. Часть 1</span>&nbsp;<span>[03 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-02-moneta-moneta.md"><span>Монета Moneta</span>&nbsp;<span>[02 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-02-lihoradka-antichnogo-vechera.md"><span>Лихорадка античного вечера</span>&nbsp;<span>[02 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-09-01-odnim-mahom-semeryh-protykahom.md"><span>Одним махом семерых протыкахом</span>&nbsp;<span>[01 сентября 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-31-manipulirovanie-manipulami-i-manufakturami.md"><span>Манипулирование манипулами и мануфактурами</span>&nbsp;<span>[31 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-30-zanimatelnoe-oslovedenie.md"><span>Занимательное ословедение</span>&nbsp;<span>[30 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-30-warum-die-mädchen-lieben-die-soldaten-darum-nicht-popularen-optimaten.md"><span>Warum die Mädchen lieben die Soldaten? Darum nicht Popularen! Optimaten!</span>&nbsp;<span>[30 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-13-zhoashen-dju-belle-poet-ruinist.md"><span>Жоашен дю Белле — поэт-руинист</span>&nbsp;<span>[13 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-13-uzbeki-v-moreplavanii.md"><span>Узбеки в мореплавании</span>&nbsp;<span>[13 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-13-suka-ljubov.md"><span>Сука любовь</span>&nbsp;<span>[13 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-07-istoricheskaja-shrapnel.md"><span>Историческая шрапнель</span>&nbsp;<span>[07 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-07-drevnegrecheskaja-smokovnitsa.md"><span>Древнегреческая смоковница</span>&nbsp;<span>[07 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-04-istochniki-zatochniki.md"><span>Источники-заточники</span>&nbsp;<span>[04 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-04-domen-ryzheborodyh-germanooptimaty-i-normannopopuljary.md"><span>Домен Рыжебородых: германооптиматы и норманнопопуляры</span>&nbsp;<span>[04 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-03-domen-ryzheborodyh-salo-jak-salo.md"><span>Домен Рыжебородых: сало як сало</span>&nbsp;<span>[03 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-03-domen-ryzheborodyh-papa-mozhet-papa-mozhet.md"><span>Домен Рыжебородых: папа может, папа может</span>&nbsp;<span>[03 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-02-domen-ryzheborodyh-tysjacha-melochej-kontejner-1.md"><span>Домен Рыжебородых: тысяча мелочей, контейнер №1</span>&nbsp;<span>[02 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-08-02-domen-ryzheborodyh-obschestvo-normano-germanskoj-druzhby.md"><span>Домен Рыжебородых: общество нормано-германской дружбы</span>&nbsp;<span>[02 августа 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-30-domen-ryzheborodyh-tsezar-i-sprut.md"><span>Домен Рыжебородых: Цезарь и Спрут</span>&nbsp;<span>[30 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-30-domen-ryzheborodyh-mafija-bessmertna.md"><span>Домен Рыжебородых: мафия бессмертна</span>&nbsp;<span>[30 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-29-domen-ryzheborodyh-sitsilianskaja-zaschita.md"><span>Домен Рыжебородых: сицилианская защита</span>&nbsp;<span>[29 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-27-domen-ryzheborodyh-esli-papa-ne-razreshaet.md"><span>Домен Рыжебородых: если папа не разрешает</span>&nbsp;<span>[27 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-27-domen-ryzheborodyh-chto-takoe-druzja-rimskogo-naroda.md"><span>Домен Рыжебородых: что такое “друзья римского народа”</span>&nbsp;<span>[27 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-23-domen-ryzheborodyh-v-boj-vstupaet-formalnaja-logika.md"><span>Домен Рыжебородых: в бой вступает формальная логика</span>&nbsp;<span>[23 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-22-domen-ryzheborodyh-privet-iz-90-h.md"><span>Домен Рыжебородых: привет из 90-х</span>&nbsp;<span>[22 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-19-domen-ryzheborodyh-pamjatka-latifundistu.md"><span>Домен Рыжебородых: памятка латифундисту</span>&nbsp;<span>[19 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-19-domen-ryzheborodyh-dikie-divizii-rimskih-imperatorov.md"><span>Домен Рыжебородых: “дикие дивизии” римских императоров</span>&nbsp;<span>[19 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-19-domen-ryzheborodyh-alternativnaja-imperija-nanosit-udar.md"><span>Домен Рыжебородых: альтернативная империя наносит удар</span>&nbsp;<span>[19 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-18-iz-za-lesa-iz-za-gor-pokazal-muzhik-kope.md"><span>Из-за леса, из-за гор показал мужик копьё</span>&nbsp;<span>[18 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-18-domen-ryzheborodyh.md"><span>Домен Рыжебородых</span>&nbsp;<span>[18 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-11-volshebnik-nedouchka.md"><span>Волшебник недоучка</span>&nbsp;<span>[11 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-11-julij-tsezar-i-kantseljarskie-prinadlezhnosti.md"><span>Юлий Цезарь и канцелярские принадлежности</span>&nbsp;<span>[11 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-10-gorjat-shumjat-badaevskie-sklady.md"><span>Горят-шумят Бадаевские склады</span>&nbsp;<span>[10 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-05-prazdnik-neposlushanija.md"><span>Праздник непослушания</span>&nbsp;<span>[05 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-04-esli-topnu-ja-nogoju-pozovu-svoih-soldat.md"><span>Если топну я ногою, позову своих солдат…</span>&nbsp;<span>[04 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-07-03-naveki-s-russkim-narodom-ili-my-tut-u-vas-posidim-nemnogo-poka-ziher-ne-utihnet.md"><span>Навеки с русским народом, или Мы тут у вас посидим немного, пока зихер не</span>&nbsp;<span>[03 июля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-27-a-shapochka-izvinite-otkuda.md"><span>А шапочка, извините, откуда?</span>&nbsp;<span>[27 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-23-gaj-julij-kejnsar.md"><span>Гай Юлий Кейнсарь</span>&nbsp;<span>[23 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-21-kolossy-kolosja-i-barbariki.md"><span>Колоссы, колосья и Барбарики</span>&nbsp;<span>[21 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-20-o-razorenii-rjazani-istoricheskaja-ugadajka-vypusk-5.md"><span>О разорении Рязани (историческая угадайка, выпуск 5)</span>&nbsp;<span>[20 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-20-asteriks-obeliks-i-hronicheskij-anahroniks.md"><span>Астерикс, Обеликс и хронический анахроникс</span>&nbsp;<span>[20 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-19-kvadratno-gnezdovaja-hristianiztsija-istoricheskaja-ugadajka-vypusk-4.md"><span>Квадратно-гнездовая христианизция (историческая угадайка, выпуск 4)</span>&nbsp;<span>[19 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-15-sluchaj-na-beloozere-istoricheskaja-ugadajka-vypusk-3.md"><span>Случай на Белоозере (историческая угадайка, выпуск 3)</span>&nbsp;<span>[15 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-15-ryzhij-ryzhego-sprosil-chem-ty-borodu-krasil.md"><span>Рыжий рыжего спросил: чем ты бороду красил?</span>&nbsp;<span>[15 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-15-balkon-kak-moveton.md"><span>Балкон как моветон</span>&nbsp;<span>[15 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-14-m-t-kachenovskij-alternativschik-xix-veka.md"><span>М. Т. Каченовский: альтернативщик XIX века</span>&nbsp;<span>[14 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-14-istoricheskaja-ugadajka-vypusk-1.md"><span>Историческая угадайка. Выпуск 1</span>&nbsp;<span>[14 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-10-1492-god-kak-nachalo-novoj-ery.md"><span>1492 год как начало новой эры</span>&nbsp;<span>[10 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-08-dvts-rabochih-i-krestjan.md"><span>ДВЦ рабочих и крестьян</span>&nbsp;<span>[08 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-06-03-zernovoj-triller-dlinoj-v-1000-let.md"><span>Зерновой триллер длиной в 1000 лет</span>&nbsp;<span>[03 июня 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-26-grad-kitezh-kak-ekologicheskaja-katastrofa.md"><span>Град Китеж как экологическая катастрофа</span>&nbsp;<span>[26 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-23-bitva-fridriha-barbarossy-s-polovtsami.md"><span>Битва Фридриха Барбароссы с половцами</span>&nbsp;<span>[23 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-20-russkie-i-rytsari.md"><span>Русские и рыцари</span>&nbsp;<span>[20 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-20-bitva-tarkvinija-s-rededej.md"><span>Битва Тарквиния с Редедей</span>&nbsp;<span>[20 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-05-18-zagadochnyj-gorod-pordugodev.md"><span>Загадочный город Пордугодев</span>&nbsp;<span>[18 мая 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-20-na-ih-storone-kanaly.md"><span>На их стороне каналы</span>&nbsp;<span>[20 апреля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-16-ty-ih-v-okno-oni-v-kalitku.md"><span>Ты их в окно — они в калитку</span>&nbsp;<span>[16 апреля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-15-zachem-on-voobsche-nuzhen-etot-novgorod.md"><span>Зачем он вообще нужен, этот Новгород?</span>&nbsp;<span>[15 апреля 2021 г.]</span></a></li>
+                    <li><a href="https://github.com/yababay/humanitarian-blog/blob/main/docs/content/2021-04-09-velikij-novgorod-faktorija-ili-forpost.md"><span>Великий Новгород: фактория или форпост?</span>&nbsp;<span>[09 апреля 2021 г.]</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="bg-light text-center w-100">

@@ -11,9 +11,13 @@
         const res = await fetch(`${prefix}/${link}${link.endsWith(".md") ? "" : ".md"}`)
         if(res.status != 200) throw "Не удалось загрузить запрашиваемый ресурс."
         const txt = await res.text()
-        tocClose.click()
+        closeOffcanvas()
         return converter.makeHtml(txt)
-                .replace(/\<blockquote\>/g, '<blockquote class="blockquote">')
+    }
+
+    function closeOffcanvas(){
+        if(tocClose) tocClose.click()
+        return ''
     }
 
 </script>
@@ -25,7 +29,7 @@
         </div>
     {:catch error}
         <div class="alert alert-danger text-center mt-3" role="alert">
-            {error}
+            {error + closeOffcanvas()}
         </div>
     {/await}
 </section>    

@@ -3,35 +3,24 @@
     "title" : "Материалы по альтернативной истории",
     "brand" : "Моя альтернатива",
     "description": "Анализ исторических источников, Античность и Средневековье, обнаружение исторических фальсификаций, происхождение славян.",
-    "homeLink": "https://yababay.github.io/humanitarian-blog",
 
     "navbarIcons": [
-        {"icon": "initialize"},
-        {"icon": "community"},
-        {"icon": "github", "link": "https://github.com/yababay/humanitarian-blog"}
+        {"icon": "person-plus", "link": "#community", "title": "Обратная связь"},
+        {"icon": "github", "link": "https://github.com/yababay/humanitarian-blog", "title": "Проект на Гитхабе"}
     ],
 
-    "asideLinks": [
-        {
-            "title": "2022 год:", 
-            "link": "#blog"
-        },
-        {
-            "title": "2021 год:", 
-            "link": "#blog"
-        }
-    ],
+    "tocToggle": "Показать список материалов",
+    "tocHeader": "Список материалов:",
 
-    "logoFormat": "svg",
+    "withBootstrap":   true,
+    "withSvelte":      true,
+    "withHashRouting": true,
+    "withHMFLayout":   true,
+    "withIndexCss":    true,
 
-    "withBootstrap":               true,
-    "withSvelte":                  true,
-    "withHashRouting":             true,
+    "headerLayout":   "brand-and-end-icons",
+    "mainLayout":     "offcanvas-and-article",
+    "footerLayout":   "simple-copyright",
 
-    "withHeaderMainFooter":        true,
-    "withBrandAndEndIconsHeader":  true,
-    "withOffcanvasAndArticleMain": true,
-    "withSimpleCopyrightFooter":   true,
-    
     "copyright": true
 }

@@ -1,0 +1,35 @@
+a.link-secondary(
+    id="toc-show"
+    type="button" 
+    data-bs-toggle="offcanvas" 
+    data-bs-target="#toc-offcanvas" 
+    aria-controls="toc-offcanvas")= ( tocToggle || "Показать список материалов")
+
+aside.offcanvas.offcanvas-start(
+    data-bs-scroll="true" 
+    data-bs-backdrop="false" 
+    tabindex="-1" 
+    id="toc-offcanvas" 
+    aria-labelledby="toc-offcanvas-label")
+
+    .offcanvas-header
+        h5.offcanvas-title(id="toc-offcanvas-label")= (tocHeader || "Список материалов:")
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    .offcanvas-body
+        include aside-links
+
+article
+    section.container
+        div.comfortable-reading.mt-3
+            include:markdown-it(html) ../../../README.md
+section.container
+    #list-of-articles.accordion(style="max-width: 80ch; margin: 3rem auto;")
+        .accordion-item
+            h2.accordion-header(id="list-of-articles-header")
+                button.accordion-button(type="button" data-bs-toggle="collapse" data-bs-target="#list-of-articles-collapse" aria-expanded="true" aria-controls="list-of-articles-collapse")
+                    | Список всех материалов (нажмите чтобы развернуть)
+            #list-of-articles-collapse.accordion-collapse.collapse( aria-labelledby="list-of-articles-header" data-bs-parent="#list-of-articles")
+                .accordion-body
+                    div.comfortable-reading.mt-3.char-80
+                        include article-links
+

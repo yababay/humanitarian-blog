@@ -1,7 +1,7 @@
 import StaticPage  from '../pages/StaticPage.svelte'
 import BackendPage from '../pages/BackendPage.svelte'
 
-const home = 'welcome'
+const home = 'README'
 const articleElement = document.querySelector('article')
 
 let lastURL = document.URL;
@@ -14,9 +14,7 @@ window.addEventListener("hashchange", function(event){
 });
 
 function switchHash(){
-    const url = document.URL
-    if(!url.includes('#')) return
-    let link = /.*#([a-zA-Z0-9\-\/\._\:]+)$/.exec(url)
+    let link = /.*#([a-zA-Z0-9\-\/\._]+)$/.exec(document.URL)
     if(!(link && link[1])) link = home
     else {
         link = link[1] 	
