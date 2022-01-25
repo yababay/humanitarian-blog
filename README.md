@@ -22,7 +22,8 @@
 
 Для более удобной навигации по материалам истользуйте, пожалуйста,
 ссылку &laquo;Показать список материалов&raquo; слева вверху. Там более актуальный перечень.
-Ссылки, размещенные ниже - скорее для поисковых систем, чем для людей, но тоже работают. 
+Ссылки, размещенные ниже - скорее для поисковых систем, чем для людей, но тоже работают и ведут на 
+markdown-тексты, размещенные на Гитхабе. 
 
 <iframe width="790" height="444" src="https://www.youtube.com/embed/raoyqp0Z1MM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

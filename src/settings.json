@@ -6,6 +6,8 @@
 
     "navbarIcons": [
         {"icon": "person-plus", "link": "#community", "title": "Обратная связь"},
+        {"icon": "telegram", "link": "https://t.me/barn_yababay_ru", "title": "Канал в Telegram"},
+        {"icon": "medium", "link": "https://yababay.medium.com", "title": "Блог на Medium"},
         {"icon": "github", "link": "https://github.com/yababay/humanitarian-blog", "title": "Проект на Гитхабе"}
     ],
 
