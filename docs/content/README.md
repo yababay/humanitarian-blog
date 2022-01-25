@@ -25,5 +25,9 @@
 Ссылки, размещенные ниже - скорее для поисковых систем, чем для людей, но тоже работают и ведут на 
 markdown-тексты, размещенные на Гитхабе. 
 
-<iframe width="790" height="444" src="https://www.youtube.com/embed/raoyqp0Z1MM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Поскольку эти статьи представляют собой по большей части статический контент
+(на Python'е написаны лишь скрипты для парсинга и публикации),
+я решил использовать хостинг от Гитхаб. Материалы находятся [здесь](https://yababay.github.io/humanitarian-blog/).
+
+Спасибо БГ за [песню](https://www.youtube.com/embed/raoyqp0Z1MM).
 
